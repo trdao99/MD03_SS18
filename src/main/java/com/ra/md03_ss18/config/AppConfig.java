@@ -32,14 +32,14 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         this.applicationContext = applicationContext;
     }
 
-    @Bean
-    public SpringResourceTemplateResolver templateResolver() {
-        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
-        resolver.setApplicationContext(applicationContext);
-        resolver.setPrefix("/view/");
-        resolver.setSuffix(".html");
-        return resolver;
-    }
+        @Bean
+        public SpringResourceTemplateResolver templateResolver() {
+            SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
+            resolver.setApplicationContext(applicationContext);
+            resolver.setPrefix("/view/");
+            resolver.setSuffix(".html");
+            return resolver;
+        }
 
     @Bean
     public SpringTemplateEngine templateEngine() {
@@ -70,7 +70,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         sf.setDataSource(getdataSource());
         sf.setPackagesToScan("com.ra");
         Properties props = new Properties();
-        props.put("hibernate.hbm2ddl.auto", "update");
+
         props.put("hibernate.show_sql",true);
         props.put("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
         sf.setHibernateProperties(props);

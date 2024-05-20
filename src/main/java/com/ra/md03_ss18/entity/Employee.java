@@ -35,7 +35,7 @@ public class Employee {
     @Column(name = "dateOfBirth")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
-    @NotNull(message = "Phone is empty!")
+    @NotNull(message = "Phonmydbe is empty!")
     @Column(name = "phone")
     private Long phone;
 }
